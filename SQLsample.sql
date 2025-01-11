@@ -1,3 +1,12 @@
+-- PART 6 -
+--add check constraint using SQL code
+ALTER TABLE tblPerson
+ADD CONSTRAINT CK_tblPerson_Age CHECK (AGE > 0 AND AGE < 150)
+
+-- DROP CONSTRAINT
+ALTER TABLE tblPerson 
+DROP CONSTRAINT CK_tblPerson_Age
+
 --PART 5 -https://www.youtube.com/watch?v=ETepOVi7Xk8
 -- practicing cascading deletes - cascade, set null, set default practiced while deleting row with foreign key constraints
 DELETE from tblGender WHERE ID = 3
