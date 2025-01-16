@@ -1,3 +1,35 @@
+// LEETCODE PROBLEM 58
+
+
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        if (s.length() == 1)
+            return 1;
+        
+        int strlen = s.length();
+
+        cout << strlen;
+
+        int wordLength = 0;
+        
+        while (strlen != 0) {
+            if (isalnum(s[strlen-1])) {
+                wordLength++;
+                strlen--;
+                continue;
+            } else {
+                if (wordLength > 0)
+                    break;
+                strlen--;
+                continue;
+            }
+        }
+
+        return wordLength;
+    }
+};
+
 // LEETCODE PROBLEM 344
 
 
