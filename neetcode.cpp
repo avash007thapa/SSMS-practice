@@ -1,3 +1,32 @@
+// NEETCODE 150- Two sum
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        
+        unordered_map<int, int> two_sum;
+        int i;
+        int difference;
+
+        for (i = 0; i < nums.size(); i++) {
+            difference = target - nums[i]; // 3 = 7-4
+
+            // Search the difference
+            auto it = two_sum.find(difference);
+
+            // Checking if difference present or not
+            if (it != two_sum.end())
+                break;
+            else
+                cout << "inserting index " << i << endl; 
+                two_sum.insert({nums[i], i});
+        }        
+    
+        return {two_sum[difference], i};
+    }
+};
+
+
 // NEETCODE 150- Valid Anagrams 
 
 class Solution {
