@@ -1,3 +1,40 @@
+-- SQL LEETCODE 50 - https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
+-- 1068. Product Sales Analysis I
+SELECT p.product_name, s.year, s.price
+FROM Sales s
+LEFT JOIN Product p
+ON s.product_id = p.product_id
+
+-- SQL Leetcode 50 - https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/?envType=study-plan-v2&envId=top-sql-50
+-- 1378. Replace Employee ID With The Unique Identifier
+SELECT EmployeeUNI.unique_id, Employees.name
+FROM EmployeeUNI
+RIGHT JOIN Employees 
+ON Employees.id = EmployeeUNI.id;
+
+
+-- SQL Leetcode 50 - https://leetcode.com/problems/big-countries/description/?envType=study-plan-v2&envId=top-sql-50  
+-- 595. Big Countries
+SELECT name, population, area
+FROM World
+WHERE 
+    area >= 3000000
+    OR
+    population >= 25000000;
+
+-- SQL Leetcode 50 - https://leetcode.com/problems/find-customer-referee/description/?envType=study-plan-v2&envId=top-sql-50 
+-- 584. Find Customer Referee
+SELECT name 
+FROM Customer
+WHERE referee_id != 2
+OR referee_id IS NULL;
+
+-- SQL Leetcode 50 - https://leetcode.com/problems/recyclable-and-low-fat-products/?envType=study-plan-v2&envId=top-sql-50 
+-- 1757. Recyclable and Low Fat Products
+SELECT product_id
+FROM Products
+WHERE low_fats = 'Y' AND recyclable = 'Y';
+
 -- PART 6 -
 --add check constraint using SQL code
 ALTER TABLE tblPerson
