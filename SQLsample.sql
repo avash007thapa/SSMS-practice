@@ -1,3 +1,20 @@
+-- SQL LEETCODE 50 - https://leetcode.com/problems/not-boring-movies/?envType=study-plan-v2&envId=top-sql-50
+-- 620. Not Boring Movies
+SELECT *
+FROM Cinema C
+WHERE C.id % 2 <> 0
+AND C.description <> "boring"
+ORDER BY C.rating DESC;
+
+-- SQL LEETCODE 50 - https://leetcode.com/problems/managers-with-at-least-5-direct-reports/description/?envType=study-plan-v2&envId=top-sql-50
+-- 570. Managers with at least 5 direct reports
+SELECT M.name
+FROM Employee E
+INNER JOIN Employee M
+ON E.managerID = M.id
+GROUP BY M.id
+HAVING count(*) > 4;
+
 -- SQL LEETCODE 50 - https://leetcode.com/problems/product-sales-analysis-i/description/?envType=study-plan-v2&envId=top-sql-50
 -- 1068. Product Sales Analysis I
 SELECT p.product_name, s.year, s.price
